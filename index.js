@@ -1,8 +1,8 @@
 const easy = [
     "6------7------5-2------1---362----81--96-----71--9-4-5-2---651---78----345-------",
-    "685329174971485326234761859362574981549618732718293465823946517197852643456137298"
-  ];
-  const medium = [
+    "685329174971485326234761859362574981549618732718293465823946517197852643456137298" 
+];
+const medium = [
     "--9-------4----6-758-31----15--4-36-------4-8----9-------75----3-------1--2--3--",
     "619472583243985617587316924158247369926531478734698152891754236365829741472163895"
   ];
@@ -44,19 +44,12 @@ for(let i=0; i<id("number-container").children.length; i++){
        if (id("diff-1").checked) board= easy[0];
        else if (id("diff-2").checked) board= medium[0];
        else board= hard[0];
-       lives=3;
-       disableSelect=false;
-       id("lives").textContent="Lives Remianing: 3";
-   
-   
+       
+       
+       
        generateBoard(board);
        startTimer();
-       if(id("theme-1").checked){
-           qs("body").classList.remove("dark");
-       } else{
-        qs("body").classList.add("dark");
-       }
-    
+           
        id("number-container").classList.remove("hidden");
    }
     
@@ -145,7 +138,6 @@ function updateMove(){
         lives--;
         if (lives===0) {endGame();}
         else{
-            id("lives").textContent= "Lives Remaining: " + lives;
             disableSelect= false;
         }
         selectedTile.classList.remove("incorrect");
@@ -173,7 +165,7 @@ function checkDone(){
 function endGame(){
     disableSelect= true;
     clearTimeout(timer);
-    if (lives=== 0 || timeRemaining===0){
+    if (timeRemaining===0){
         id("lives").textContent="Sorry, you Lost.";
     }
     else{
