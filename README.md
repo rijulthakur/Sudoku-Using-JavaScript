@@ -1,1 +1,1 @@
-# sudoku
+# A sudoku game using JavaScript.
